@@ -33,4 +33,5 @@ from app.modules.calculate.handler import router as r4
 from app.modules.quarantine.handler import router as r5
 from app.modules.reconcile.handler import router as r6
 from app.modules.batches.handler import router as r7
-for router in (r1,r2,r3,r4,r5,r6,r7):app.include_router(router)
+from app.modules.repair.handler import router as r8
+for router in (r1,r2,r3,r4,r5,r6,r7,r8):app.include_router(router)
