@@ -1,0 +1,6 @@
+:root {
+ --bg:#16121f; --rail:#100d17; --panel:#1b1727; --panel-2:#242033; --line:#393047; --line-strong:#63526f;
+ --ink:#e3daec; --ink-muted:#9f90ac; --accent:#b388e8; --accent-ink:#171023; --accent-soft:#352744;
+ --ok:#89c4a0; --warn:#d5b36a; --bad:#df8f9b; --info:#9db0cc; --ui:"SFMono-Regular","PingFang SC",monospace; --mono:"SFMono-Regular",Consolas,monospace;
+ --radius:0px; --row:32px; --gap:12px; --pad:16px; --bar:38px; --dur:100ms;
+}

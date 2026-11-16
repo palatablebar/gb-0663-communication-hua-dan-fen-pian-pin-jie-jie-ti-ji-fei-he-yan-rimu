@@ -1,0 +1,1 @@
+document.getElementById('filter')?.addEventListener('input',event=>{const query=event.target.value.trim();document.querySelectorAll('tbody tr').forEach(row=>row.hidden=!row.textContent.includes(query));});

@@ -1,0 +1,5 @@
+const state={busy:false};
+const output=document.getElementById('feedback');
+async function execute(path,payload){if(state.busy)return;state.busy=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);output.hidden=false;output.textContent='[RUNNING] 正在核算';try{const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const result=await r.json();if(!r.ok)throw new Error(result.detail||'执行失败，请重试');location.reload();}catch(error){output.textContent='[ERROR] '+error.message;}finally{state.busy=false;document.querySelectorAll('button').forEach(b=>b.disabled=false);}}
+document.getElementById('run').addEventListener('click',()=>{const text=document.getElementById('csv-text')?.value;execute('/api/runs',{sample:document.getElementById('sample').value,...(text?{csv_text:text}:{})});});
+document.getElementById('review')?.addEventListener('click',event=>execute('/api/batches/review',{run_id:event.currentTarget.dataset.run,version:Number(event.currentTarget.dataset.version)}));
